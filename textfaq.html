@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Singpoint FAQ - Fragen und Antworten</title>
+	<link href="http://www.singpoint.de/styles.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		div.box_head{
+			height:25px;
+			background-image:url(http://www.singpoint.de/img/roundc_bg_top.gif);
+			background-repeat:no-repeat;
+		}
+		div.box_content{
+			background-image:url(http://www.singpoint.de/img/roundc_bg_middle.gif);
+			background-repeat:repeat-y;
+			padding:0px 25px 40px 35px;
+			min-height:560px;
+		}
+		div.box_foot{
+			height:25px;
+			background-image:url(http://www.singpoint.de/img/roundc_bg_bottom.gif);
+			background-repeat:no-repeat;
+		}
+		hr.box_line{
+			margin:0px 0px 0px 0px;
+			height:1px;
+			color:#777777;
+		}
+		div.faq_navi{
+			margin-left:20px;
+			margin-top:100px;
+			position:relative;
+			width:300px;
+			min-height:20px;
+		}
+		div.faq_navi h1{
+			font-size:14px;
+			color:#444;
+			font-weight:bold;
+		}
+		div.faq_navi p{
+			color:#777777;
+			font-weight:bold;
+		}
+		div.faq_navi ul{
+			display:block;
+			float:left;
+			list-style-position:inside;
+		}
+		div.faq_navi ul li{
+			width:150px;
+			color: #fe0000;
+		}
+		div.faq_navi ul li:hover{
+			color:;
+		}
+		div.faq_navi ul li span{
+			cursor:pointer;
+			font-weight:bold;
+			margin-left:-5px;
+			color:#777777;
+		}
+		div.faq_navi ul li span:hover{
+			color:#fe0000;
+		}
+		ul.faq_navi_links{
+			margin:10px 0 0 0;
+			padding:0px;
+			float:left;
+			max-width:150px;
+		}
+		ul.faq_navi_rechts{
+			display:none;
+			margin:10px 0 0 0;
+			max-width:150px;
+			padding:0px;
+		}
+		div.faq_content{
+			margin: 0px 40px 0px 40px;
+		}
+		h1.faq_kategorie{
+			margin: 20px 0px 20px 0px;
+			font-weight:bold;
+			font-size:28px;
+			color:#444;
+		}
+		h3.faq_frage{
+			margin-top:3px;
+			color:#0c5983;
+			cursor:pointer;
+		}
+		p.faq_antwort{
+			margin-left:10px;
+			font-weight:bold;
+			padding-bottom:10px;
+		}
+	</style>
+    <script src="effects/prototype.js" type="text/javascript"></script>
+	<script src="effects/scriptaculous.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	var BrowserDetect = {
+		init: function () {
+			this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+			this.version = this.searchVersion(navigator.userAgent)
+				|| this.searchVersion(navigator.appVersion)
+				|| "an unknown version";
+			this.OS = this.searchString(this.dataOS) || "an unknown OS";
+		},
+		searchString: function (data) {
+			for (var i=0;i<data.length;i++)	{
+				var dataString = data[i].string;
+				var dataProp = data[i].prop;
+				this.versionSearchString = data[i].versionSearch || data[i].identity;
+				if (dataString) {
+					if (dataString.indexOf(data[i].subString) != -1)
+						return data[i].identity;
+				}
+				else if (dataProp)
+					return data[i].identity;
+			}
+		},
+		searchVersion: function (dataString) {
+			var index = dataString.indexOf(this.versionSearchString);
+			if (index == -1) return;
+			return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+		},
+		dataBrowser: [
+			{
+				string: navigator.userAgent,
+				subString: "Chrome",
+				identity: "Chrome"
+			},
+			{ 	string: navigator.userAgent,
+				subString: "OmniWeb",
+				versionSearch: "OmniWeb/",
+				identity: "OmniWeb"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Apple",
+				identity: "Safari",
+				versionSearch: "Version"
+			},
+			{
+				prop: window.opera,
+				identity: "Opera"
+			},
+			{
+				string: navigator.vendor,
+				subString: "iCab",
+				identity: "iCab"
+			},
+			{
+				string: navigator.vendor,
+				subString: "KDE",
+				identity: "Konqueror"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Firefox",
+				identity: "Firefox"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Camino",
+				identity: "Camino"
+			},
+			{		// for newer Netscapes (6+)
+				string: navigator.userAgent,
+				subString: "Netscape",
+				identity: "Netscape"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "MSIE",
+				identity: "Explorer",
+				versionSearch: "MSIE"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Gecko",
+				identity: "Mozilla",
+				versionSearch: "rv"
+			},
+			{ 		// for older Netscapes (4-)
+				string: navigator.userAgent,
+				subString: "Mozilla",
+				identity: "Netscape",
+				versionSearch: "Mozilla"
+			}
+		],
+		dataOS : [
+			{
+				string: navigator.platform,
+				subString: "Win",
+				identity: "Windows"
+			},
+			{
+				string: navigator.platform,
+				subString: "Mac",
+				identity: "Mac"
+			},
+			{
+				   string: navigator.userAgent,
+				   subString: "iPhone",
+				   identity: "iPhone/iPod"
+			},
+			{
+				string: navigator.platform,
+				subString: "Linux",
+				identity: "Linux"
+			}
+		]
+	
+	};
+	BrowserDetect.init();
+	
+	var bro = BrowserDetect.browser;
+	if(bro == 'Firefox') self.location.href='faq_js.html';
+    </script>
+</head>
+<body>
+			<div id="main_wrapper">
+		
+			<div id="top">
+			<div style="height: 73px;">
+				<div class="mainlogo" onClick="document.location.href='http://www.singpoint.de/';"></div>
+                <div style="float: right; margin-top: 37px; margin-right: 10px; height: 22px; width: 500px">
+                    <div style="float:right;">
+                        <img alt="Deutschland Flagge" src="img/flag_de.gif" style="margin-right: 5px"/>
+                        <img alt="England Flagge" src="img/flag_en.gif" style="margin-right: 5px"/>
+                        <img alt="Frankreich Flagge" src="img/flag_fr.gif"/>
+                    </div>
+
+                    <div style="float:right; padding-top: 4px; margin-right: 10px">
+                        <ul class="top_navigation">
+    <li><a href="contact.html">Kontakt</a></li>
+    <li id="menu_trigger1"
+        onmouseover="menu_activ('menu_label1',true,'menu_sub1');"
+        onmouseout="menu_activ('menu_label1',false,'menu_sub1');">
+        <a id="menu_label1" href="UberSingpoint.html">Über Singpoint</a>
+
+        <div class="menu_sub" id="menu_sub1" onMouseOver="menu_activ('menu_label1',true,null);">
+            <img alt="Pfeil zu Tonstudio Angeboten" src="img/submenu_arrow.jpg"/>
+
+            <div class="submenu_content">
+                <h4>Das Tonstudio für Alle.</h4>
+
+                <div class="submenu_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/kindergeburtstag.html">Kindergeburtstag</a></li>
+                        <li><a href="http://www.singpoint.de/sing-point_event_info.html">Firmen-/Vereinsfeiern</a></li>
+                        <li><a href="http://www.singpoint.de/junggesellenabschied.html">Junggesellenabschied</a></li>
+                        <li><a href="http://www.singpoint.de/junggesellinnenabschied.html">Junggesellinnenabschied</a></li>
+                        <li><a href="http://www.singpoint.de/weihnachtsfeier.html">Weihnachtsfeier</a></li>
+                        <li><a href="http://www.singpoint.de/baby-cd.html">Baby-CD</a></li>
+                    </ul>
+                </div>
+                <div class="submenu_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/studios_song_info.html">Dein eigener Song</a></li>
+                        <li><a href="http://www.singpoint.de/studios_pro_info.html">Demo-CD</a></li>
+                        <li><a href="http://www.singpoint.de/studios_pro.html">Bandaufnahmen</a></li>
+                        <li><a href="http://www.singpoint.de/studios_story_info.html">Dein Hörbuch</a></li>
+                        <li><a href="http://www.singpoint.de/musikvideo_info.html">Musikvideo</a></li>
+                    </ul>
+                </div>
+                <div class="submenu_col" id="last_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/gutschein/">Gutscheine</a></li>
+                        <li><a href="http://www.singpoint.de/playbacks_songtexte.html">Playbacks & Lyrics</a></li>
+                        <li><a href="http://www.singpoint.de/vstudio.html">Online Tonstudio</a></li>
+                        <li><a href="http://www.singpoint.de/Vocal_Coaching.html">Vocal Coaching</a></li>
+                        <li><a href="http://www.singpoint.de/club/">Singpoint Club</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li><a href="http://www.singpoint.de/gutschein/index.php">Gutscheine</a></li>
+    <li class="top_navigation_last"><a href="http://www.singpoint.de/faq.html">FAQ</a></li>
+</ul>
+                    </div>
+                </div>
+			</div>
+			<div style="height:32px; background:url(img/bg_balken.gif);"></div>
+		</div>
+
+		<div id="content">
+
+
+				<div class="sub_content">
+					<div class="top_sub_navi">
+						<a href="http://www.singpoint.de/index.html">HOME</a> | <a href="../#" class="active">FEEDBACK</a>		
+					</div>
+					
+					<div class="bg_balken_top"></div>
+					
+					
+	<div class="middle">
+		<div class="box_head"></div>
+		<div class="box_content">
+			<img src="img/faq_pic.JPG" />
+        	<div style="float:right; width: 335px; padding-top: 10px">
+				<div style="float:right; width: 140px">
+					<div style="float:left; width: 25px;"><img src="img/pfeile_kontakt.GIF" align="top" /></div>
+					<div style="font-size: 11px; float:left;">oder telefonisch unter:<br/>01805 / 200252*</div>
+				</div>
+				<div class="faq_navi">
+            		<h1>FAQ - Häufig gestellte Fragen</h1>
+                	<p>In den FAQ werden oft gestellte Fragen beantwortet. Solltest du keine Antworten gefunden haben, kannst du dich mit deinen Fragen gerne auch direkt an uns wenden. Wenn du ein Thema hast, das unbedingt in der FAQ sein sollte dann schreibe uns einfach.</p>
+					<ul class="faq_navi_links">
+                        <li><span><a style="color:#777;" href="#allgemein">Allgemein</a></span></li>
+                        <li><span><a style="color:#777;" href="#funpakete">Fun-Pakete</a></span></li>
+                        <li><span><a style="color:#777;" href="#propakete">Pro-Pakete</a></span></li>
+                        <li><span><a style="color:#777;" href="#kindergeburtstag">Kindergeburtstag</a></span></li>
+                        <li><span><a style="color:#777;" href="#junggesellenabschied">Junggesellenabschied</a></span></li>
+                    </ul>
+                    <ul class="faq_navi_rechts">
+                        <li><span><a style="color:#777;" href="#firmenfeiern">Firmen-Vereinsfeiern</a></span></li>
+                        <li><span><a style="color:#777;" href="#vstudio">V-Studio</a></span></li>
+                        <li><span><a style="color:#777;" href="#song">Song</a></span></li>
+                        <li><span><a style="color:#777;" href="#story">Story</a></span></li>
+                        <li><span><a style="color:#777;" href="#musikvideo">Musikvideo</a></span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="box_line">
+            <div id="faq_content" class="faq_content">
+            	<div id="allgemein">
+                	<h2 class="faq_kategorie">Allgemein</h2>
+                    
+                    <h3 class="faq_frage">&bull; Wo befinden sich die Singpoint Tonstudios?</h3>
+                    <p class="faq_antwort">Singpoint ist deutschlandweit in zahlreichen Städten mit Tonstudios präsent. Abhängig von der derzeitigen Buchungssituation können wir passende Standorte empfehlen. Welcher Standort nun für Deine Aufnahme in Frage kommt hängt also von dem Wunschtermin, der Teilnehmerzahl und natürlich von der Erreichbarkeit für Dich ab. Grundsätzlich sind die Studios zentral gelegen und mit öffentlichen Verkehrsmitteln gut erreichbar.</p>
+                
+                	<h3 class="faq_frage">&bull; Kann ich vorher das Studio besichtigen?</h3>
+                    <p class="faq_antwort">Leider können wir Aufgrund der großen Nachfrage keine Besichtigungen mehr anbieten. Die Tontechniker werden durch den Studiotourismus zu sehr von der eigentlichen Arbeit abgehalten und bekommen Schwierigkeiten die zeitlichen Vorgaben der Produktionen einzuhalten. Schließlich möchte man bei seiner eigenen Aufnahme auch nicht unterbrochen werden. :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann ist es möglich bei Singpoint im Studio aufzunehmen?</h3>
+                    <p class="faq_antwort">Singpoint arbeitet grundsätzlich MO-SO von 9:00 bis 22:00. Die meisten Feiertage haben wir ebenfalls geöffnet.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit aufgenommen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach den Aufnahmen holt der Tontechniker noch das Maximum aus der Stimme raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen. Ebenfalls kann die Zeit auch nach eigener Planung überbrückt werden (Spiele etc.).</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Der Ablauf variiert je nach gebuchtem Paket und Anspruch. Grundsätzlich gibt es aber vorgegebene Produktionsmuster. Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen.<br><br>Je nach Paket werden die Songs durchgesungen  oder Part für Part aufgenommen bis ein zufrieden stellendes Ergebnis erreicht ist. Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich einen Termin reservieren?</h3>
+                    <p class="faq_antwort">Unter unserer Hotline (01805/200252) sind wir täglich von 9:00 bis 22:00 erreichbar. Wir helfen einen passenden Termin zu finden und reservieren diesen dann für Euch. Die verbindliche Buchungsbestätigung wird dann per E-mail versendet. Bitte habt Verständnis dafür, dass wir Termine lediglich dann blocken können, wenn Ihr Euch fest für das Event entschieden habt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie weit im Voraus sollte gebucht werden?</h3>
+                    <p class="faq_antwort">Je früher gebucht wird, desto größer ist die Wahrscheinlichkeit, dass der Wunschtermin noch frei ist. Besonders bei Terminen am Wochenende raten wir frühzeitig zu buchen. Dennoch sind auch spontane Buchungen bis 3 Tage vorher möglich. Wir empfehlen hier den direkten telefonischen Kontakt um die Buchungsabwicklung noch zeitig tätigen zu können.</p>
+                </div>
+                
+                <div id="funpakete">
+                	<h2 class="faq_kategorie">Fun-Pakete</h2>
+                    
+                    <h3 class="faq_frage">&bull; Für welchen Anlass sollte ich ein FUN-Paket buchen?</h3>
+                    <p class="faq_antwort">Bei Kindergeburtstagen, Junggesellenabschieden, Firmen- und Vereinsfeiern oder als Geschenk für die Liebsten. Im Vordergrund steht hier der Spaßfaktor. Im Unterschied zu unseren PRO-Paketen wird hier Erlebnis- und nicht Ergebnisorientiert gearbeitet. Pures Tonstudiofeeling mit einer großen Portion Spaß.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei den FUN-Paketen zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 FUN-Pakete (Basic, Standard und Premium) angeboten. Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback.<br><br>Eine Einzelperson zahlt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 59,- Euro, beim Standard-Paket 89,- Euro und für das Premium-Paket 129,- Euro. Jeder weitere Teilnehmer wird mit 15,- Euro berechnet. Für die Lizenzierung mehrerer Playbacks (falls mehr als ein Song gewünscht wird) fallen 10,- Euro pro weiteren Titel an.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns.</p>
+                    
+                    <h3 class="faq_frage">&bull; Welche Songs können gesungen werden?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a> können aus unserem Archiv mit über 20.000 Songs (Songs im Stile vom original Interpreten) die passenden Playbacks ausgesucht werden. Sollte der gewünschte Song nicht dabei sein besteht die Möglichkeit, in Partner-Archiven diese gegen 20,- Euro Lizenzierungsgebühr zu besorgen.<br><br>Bitte bedenke auch, dass es nicht zu jedem Song auch eine Playback-Version gibt. Eigene Playbacks können nur in Ausnahmefällen mitgebracht werden da es hier zu Kompatibilitäts-Problemen kommen kann. Ebenfalls sollte darauf geachtet werden, dass es nicht zu jedem Song auch ein passendes Playback mit Hauptstimme gibt. Ob wir euren Song in allen Versionen verfügbar haben, könnt ihr unter obigem Link erfahren.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich mir die Fotosession vorstellen?</h3>
+                    <p class="faq_antwort">Unsere Fotosession ist nicht zu verwechseln mit einem professionellen Fotoshooting. Es handelt sich ja auch in erster Linie um eine Tonstudioaufnahme. Für die Covergestaltung werden hierzu Schnappschüsse gemacht um ein passendes Motiv für das Cover zu bekommen. Gerne können auch eigene Motive und Bilder in die Gestaltung eingebunden werden. Bitte bedenkt, dass wir in seltenen Fällen, aus Zeitgründen, nur auf Euer Bildmaterial zurückgreifen können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist in den FUN-Paketen enthalten?</h3>
+                    <p class="faq_antwort">Die Pakete gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. Bei dem Premium- und dem Standart-Paketen (ab 3 Teilnehmern) ist auch noch die Fotosession und Covergestaltung enthalten. Die angegebene Zeit ist die Gesamtdauer im Tonstudio inklusive der Nachbearbeitung vom Tontechniker. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Die angegebene Song-Anzahl ist daher lediglich ein Richtwert.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie sieht das Cover aus?</h3>
+                    <p class="faq_antwort">Auf unserer Homepage sind zahlreiche Beispiele aufgeführt. 
+Durch ein passendes Foto aus der Fotosession oder eines, welches uns zur Verfügung gestellt wurde, wird das Cover von unseren Grafikern gestaltet. Nach den Aufnahmen besteht die Möglichkeit Gestaltungswünsche zu äußern (Titel, Bandname, etc.) Bitte achtet darauf, dass die ausgewählten Bilder sowie Texte Euren Wünschen entsprechend vom Tontechniker aufgenommen werden da eine nachträgliche Abänderung nicht ohne weiteres möglich ist.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie lange dauert es bis die fertige CD(s) inkl. Cover zugesandt wird?</h3>
+                    <p class="faq_antwort">Je nach Auftragslage müssen 1-4 Wochen nach der Aufnahme eingeplant werden. Abhängig vom Standort wird das Cover auch während der Session gestaltet, so dass hier direkt in die Gestaltung Einfluss genommen und die fertige CD gleich mitgenommen werden kann.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit gesungen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach dem Einsingen holt der Tontechniker noch das Maximum aus den Aufnahmen raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen. Je nach Standort wird das Cover auch in der Zeit gestaltet, so dass hier direkt in die Gestaltung Einfluss genommen werden kann. Ebenfalls kann die Zeit auch nach eigener Planung überbrückt werden (Spiele etc.).</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen. In der Regel werden die Songs durchgesungen, seltener, wie in den PRO-Paketen, Part für Part aufgenommen. 
+Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Songs sind möglich zu singen?</h3>
+                    <p class="faq_antwort">Die angegebene Song-Anzahl ist lediglich ein Richtwert. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. 
+Z.B werden erfahrungsgemäß im FUN-Standard, bei Gruppen, ein Song geschafft; wenn alles optimal läuft noch ein zweiter. Eigene Songs, abgeänderte Texte oder aufgeteilte Solo-Parts bei Gruppen sind von der Umsetzung her zeitintensiver.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer können mitsingen und wie viele mitkommen?</h3>
+                    <p class="faq_antwort">Je nach Standort sind Kapazitäten von maximal 5 bis 25 und mehr Personen möglich. Grundsätzlich können 2 Begleitpersonen mitkommen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo bekomme ich die Songtexte her?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a> könnt Ihr Euch für die Aufnahme die passenden Texte herunterladen und ausdrucken.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie bereite ich mich auf die Tonstudioaufnahme vor?</h3>
+                    <p class="faq_antwort">Es ist sehr hilfreich, wenn die gewünschten Songs vorher geübt werden.
+Je besser und öfter der Song vorab gehört und geprobt wird umso leichter wird es später im Studio. In unserem V-Studio könnt Ihr Euch auch perfekt online auf die Aufnahme vorbereiten und Tipps und Tricks einholen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer sind in den Paketen enthalten?</h3>
+                    <p class="faq_antwort">In jedem unserer Pakete ist ein Teilnehmer enthalten. Jeder weitere wird mit  15,- berechnet. Bei großen Gruppen sind abhängig vom Termin und Standort Pauschalpreise möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Können Getränke und Snacks mitgebracht werden?</h3>
+                    <p class="faq_antwort">Grundsätzlich können kleine Snacks mitgebracht werden. Es ist darauf zu achten, dass keine fettigen oder brösligen Lebensmittel im Studio verzehrt werden. Optimal sind z.B. Gummibärchen, Bonbons oder Tetrapacks. Getränke oder Snacks werden nicht gestellt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viel Zeit muss ich für das Event einplanen?</h3>
+                    <p class="faq_antwort">Je nach Paket werden die angegebenen Zeiten eingeplant.<br><br>FUN BASIC: ca. 45min<br>FUN STANDARD: ca.1,5 Stunden<br>FUN PREMIUM: ca. 2 Stunden</p>
+                    
+                    <h3 class="faq_frage">&bull; Muss der Song(s) im Vorwege oder vor Ort ausgesucht werden?</h3>
+                    <p class="faq_antwort">Der oder die Song sollten im Vorfeld aus unserem Archiv (<a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a>) spätestens 5 Tage vor Aufnahmetermin ausgewählt und uns mitgeteilt werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was sollte in das Studio mitgebracht werden?</h3>
+                    <p class="faq_antwort">- Getränke und Snacks entsprechend der Teilnehmerzahl und gebuchten Zeit.<br>- Songtexte (www.singpoint.de/Songtexte)<br>- Gute Laune :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welches Paket ist für mich das richtige?</h3>
+                    <p class="faq_antwort">Für Gruppen empfehlen wir unser FUN-Standard oder unser FUN-Premium. Das FUN-Basic ist mit 45min für eine Gruppe relativ kurz bemessen und eignet sich eher für Einzelpersonen. Je nach Gruppengröße und Vorbereitung sollten beim FUN-Standard (1,5h) ein und beim FUN-Premium (2h) 2 Songs eingeplant werden. Bei guter Vorbereitung und kleiner Gruppenstärke sind aber auch mehr Songs möglich.</p>
+                </div>
+                
+                <div id="propakete">
+                	<h2 class="faq_kategorie">Pro-Pakete</h2>
+                    
+                    <h3 class="faq_frage">&bull; Für welchen Anlass sollte ich ein PRO-Paket buchen?</h3>
+                    <p class="faq_antwort">Bei anspruchsvollen Aufnahmen für Demo oder Veröffentlichungszwecke, Bandaufnahmen, hohem Anspruch bei unerfahrenen Sängern z.B. als Geschenkidee etc. Im Vordergrund steht hier das Ergebnis. Im Unterschied zu unseren FUN-Paketen wird hier Ergebnis- und nicht Erlebnisorientiert gearbeitet. Hier wird das Maximum aus Deiner Stimme herausgeholt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei den PRO-Paketen zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 PRO-Pakete (Basic, Standard und Premium) angeboten. Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. Eine Einzelperson zahlt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 159,- Euro, beim Standard-Paket 199,- Euro und für das Premium-Paket 289,- Euro. Jeder weitere Teilnehmer wird mit 25,- Euro berechnet. Für die Lizenzierung mehrerer Playbacks (falls mehr als ein Song gewünscht wird) fallen 10,- Euro pro weiteren Titel an.<br><br>Bei Bands oder Aufnahmen mit Instrumenten sollte das Instruments Add-On dazugebucht werden.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns!</p>
+                    
+                    <h3 class="faq_frage">&bull; Welche Songs können gesungen werden?</h3>
+                    <p class="faq_antwort">Neben eigenen Songs und Kompositionen können unter <a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a> aus unserem Archiv mit über 20.000 Songs (Songs im Stile vom original Interpreten) die passenden Playbacks ausgesucht werden. Sollte der gewünschte Song nicht dabei sein besteht die Möglichkeit, in Partner-Archiven diese gegen 20,- Euro Lizenzierungsgebühr zu besorgen.<br><br>Bitte bedenke auch, dass es nicht zu jedem Song auch eine Playback-Version gibt. Eigene Playbacks können nur in Ausnahmefällen mitgebracht werden da es hier zu Kompatibilitäts-Problemen kommen kann. Bei eigenen Songs muss das Instrumental vorhanden sein und Singpoint für die Aufnahmen zur Verfügung gestellt werden.  Ebenfalls sollte darauf geachtet werden, dass es nicht zu jedem Song auch ein passendes Playback mit Hauptstimme gibt. Ob wir euren Song in allen Versionen verfügbar haben, könnt ihr unter obigem Link erfahren.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich mir die Fotosession vorstellen?</h3>
+                    <p class="faq_antwort">Unsere Fotosession ist nicht zu verwechseln mit einem professionellen Fotoshooting. Es handelt sich ja auch in erster Linie um eine Tonstudioaufnahme. Für die Covergestaltung werden hierzu Schnappschüsse gemacht um ein passendes Motiv für das Cover zu bekommen. Gerne können auch eigene Motive und Bilder in die Gestaltung eingebunden werden. Bitte bedenkt, dass wir in seltenen Fällen, aus Zeitgründen, nur auf Euer Bildmaterial zurückgreifen können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist in den PRO-Paketen enthalten?</h3>
+                    <p class="faq_antwort">Die Pakete gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. In allen Paketen ist eine Fotosession und eine Covergestaltung enthalten.   Im Gegensatz zu den FUN-Paketen steht hier klar das Ergebnis im Vordergrund. Die angegebene Zeit ist die Gesamtdauer im Tonstudio inklusive der Nachbearbeitung vom Tontechniker. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Die angegebene Song-Anzahl ist daher lediglich ein Richtwert. Je mehr Songs gesungen werden desto mehr Kompromisse müssen in der Qualität eingegangen werden. Eigenen Texten und Songs sind zeitlich aufwändiger und müssen dementsprechend bei der Zeitplanung berücksichtigt werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie sieht das Cover aus?</h3>
+                    <p class="faq_antwort">Auf unserer Homepage sind zahlreiche Beispiele aufgeführt. 
+Durch ein passendes Foto aus der Fotosession oder eines, welches uns zur Verfügung gestellt wurde, wird das Cover von unseren Grafikern gestaltet. Nach den Aufnahmen besteht die Möglichkeit Gestaltungswünsche zu äußern (Titel, Bandname, etc.) Bitte achtet darauf, dass die ausgewählten Bilder sowie Texte Euren Wünschen entsprechend vom Tontechniker aufgenommen werden da eine nachträgliche Abänderung nicht ohne weiteres möglich ist.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie lange dauert es bis die fertige CD(s) inkl. Cover zugesandt wird?</h3>
+                    <p class="faq_antwort">Je nach Auftragslage müssen 1-4 Wochen nach der Aufnahme eingeplant werden. Abhängig vom Standort wird das Cover auch während der Session gestaltet, so dass hier direkt in die Gestaltung Einfluss genommen und die fertige CD gleich mitgenommen werden kann.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit gesungen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach dem Einsingen holt der Tontechniker noch das Maximum aus den Aufnahmen raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen. Je nach Standort wird das Cover auch gleich gestaltet und kann sofort mitgenommen werden. Ebenfalls kann die Zeit auch nach eigener Planung überbrückt werden (Spiele etc.).</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen. Die Songs werden in der Regel Part für Part aufgenommen bis ein zufrieden stellendes Ergebnis erreicht ist.
+Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover. Abhängig vom Standort wird das Cover auch während der Session gestaltet, und kann sofort mitgenommen werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Songs sind möglich zu singen?</h3>
+                    <p class="faq_antwort">Die angegebene Song-Anzahl ist lediglich ein Richtwert. Wie viele Songs eingesungen werden können ist stark abhängig von der dem Anspruch und der Vorbereitung. Eigene Songs, abgeänderte Texte oder aufgeteilte Solo-Parts bei Gruppen sind von der Umsetzung her zeitintensiver.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer können mitsingen und wie viele mitkommen?</h3>
+                    <p class="faq_antwort">Je nach Standort sind Kapazitäten von maximal 5 bis 25 und mehr Personen möglich. Grundsätzlich können 2 Begleitpersonen mitkommen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo bekomme ich die Songtexte her?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a> könnt Ihr Euch für die Aufnahme die passenden Texte herunterladen und ausdrucken.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie bereite ich mich auf die Tonstudioaufnahme vor?</h3>
+                    <p class="faq_antwort">Es ist sehr hilfreich, wenn die gewünschten Songs vorher geübt werden.
+Je besser und öfter der Song vorab gehört und geprobt wird umso leichter wird es später im Studio. In unserem V-Studio könnt Ihr Euch auch perfekt online auf die Aufnahme vorbereiten und Tipps und Tricks einholen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer sind in den Paketen enthalten?</h3>
+                    <p class="faq_antwort">In jedem unserer Pakete ist ein Teilnehmer enthalten. Jeder weitere wird mit 25,- berechnet. Bei großen Gruppen sind abhängig vom Termin und Standort Pauschalpreise möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Können Getränke und Snacks mitgebracht werden?</h3>
+                    <p class="faq_antwort">Grundsätzlich können kleine Snacks mitgebracht werden. Es ist darauf zu achten, dass keine fettigen oder brösligen Lebensmittel im Studio verzehrt werden. Optimal sind z.B. Gummibärchen, Bonbons oder Tetrapacks. Getränke oder Snacks werden nicht gestellt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viel Zeit muss ich für die Aufnahmen einplanen?</h3>
+                    <p class="faq_antwort">Je nach Paket werden die angegebenen Zeiten angesetzt:<br><br>PRO BASIC: 2-3Stunden<br>PRO STANDARD: 4-5 Stunden<br>PRO PREMIUM: 7-8 Stunden</p>
+                    
+                    <h3 class="faq_frage">&bull; Muss der Song(s) im Vorwege oder vor Ort ausgesucht werden?</h3>
+                    <p class="faq_antwort">Der oder die Song sollten im Vorfeld aus unserem Archiv (<a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a>) spätestens 5 Tage vor Aufnahmetermin ausgewählt und uns mitgeteilt werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was sollte in das Studio mitgebracht werden?</h3>
+                    <p class="faq_antwort">- Getränke und Snacks entsprechend der Teilnehmerzahl und gebuchten Zeit.<br>- Songtexte (<a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a>)<br>- Gute Laune :-)</p>
+                </div>
+                
+                 <div id="kindergeburtstag">
+                	<h2 class="faq_kategorie">Kindergeburtstag</h2>
+                    
+                    <h3 class="faq_frage">&bull; Wo befinden sich die Singpoint Tonstudios?</h3>
+                    <p class="faq_antwort">Singpoint ist deutschlandweit in zahlreichen Städten mit Tonstudios präsent. Abhängig von der derzeitigen Buchungssituation können wir passende Standorte empfehlen. Welcher Standort nun für Deine Aufnahme in Frage kommt hängt also von dem Wunschtermin, der Teilnehmerzahl und natürlich von der Erreichbarkeit für Dich ab. Grundsätzlich sind die Studios zentral gelegen und mit öffentlichen Verkehrsmitteln gut erreichbar.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei den FUN-Paketen zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 FUN-Pakete (Basic, Standard und Premium) angeboten.Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback.<br><br>Eine Einzelperson zahlt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 59,- Euro,<br>beim Standard-Paket 89,- Euro und für das Premium-Paket 129,- Euro.<br>Für die Lizenzierung mehrerer Playbacks (falls mehr als ein Song gewünscht wird) fallen 10,- Euro pro weiteren Titel an.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns!</p>
+                    
+                    <h3 class="faq_frage">&bull; Kann ich vorher das Studio besichtigen?</h3>
+                    <p class="faq_antwort">Leider können wir Aufgrund der großen Nachfrage keine Besichtigungen mehr anbieten. Die Tontechniker werden durch den Studiotourismus zu sehr von der eigentlichen Arbeit abgehalten und bekommen Schwierigkeiten die zeitlichen Vorgaben der Produktionen einzuhalten. Schließlich möchte man bei seiner eigenen Aufnahme auch nicht unterbrochen werden. :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welche Songs können gesungen werden?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a> können aus unserem Archiv mit über 20.000 Songs (Songs im Stile vom original Interpreten) die passenden Playbacks ausgesucht werden. Sollte der gewünschte Song nicht dabei sein besteht die Möglichkeit, in weiteren Karaoke-Archiven diese gegen eine Lizenzgebühr von 20,- Euro zu besorgen.<br><br>Bitte bedenke auch, dass es nicht zu jedem Song auch eine Playback-Version gibt. Eigene Playbacks können nur in Ausnahmefällen mitgebracht werden da es hier zu Kompatibilitäts-Problemen kommen kann. Ebenfalls sollte darauf geachtet werden, dass es nicht zu jedem Song auch ein passendes Playback mit Hauptstimme gibt. Ob wir euren Song in allen Versionen verfügbar haben, könnt ihr unter obigem Link erfahren.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich mir die Fotosession vorstellen?</h3>
+                    <p class="faq_antwort">Unsere Fotosession ist nicht zu verwechseln mit einem professionellen Fotoshooting. Es handelt sich ja auch in erster Linie um eine Tonstudioaufnahme. Für die Covergestaltung werden hierzu Schnappschüsse gemacht um ein passendes Motiv für das Cover zu bekommen. Gerne können auch eigene Motive und Bilder in die Gestaltung eingebunden werden. Bitte bedenkt, dass wir in seltenen Fällen, aus Zeitgründen, nur auf Euer Bildmaterial zurückgreifen können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist in den FUN-Paketen enthalten?</h3>
+                    <p class="faq_antwort">Die Pakete gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. Bei dem Premium- und dem Standart-Paketen (ab 3 Teilnehmern) ist auch noch die Fotosession und Covergestaltung enthalten. Die angegebene Zeit ist die Gesamtdauer im Tonstudio inklusive der Nachbearbeitung vom Tontechniker. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Die angegebene Song-Anzahl ist daher lediglich ein Richtwert.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann ist es möglich bei Singpoint im Studio aufzunehmen?</h3>
+                    <p class="faq_antwort">Singpoint arbeitet grundsätzlich MO-SO von 9:00 bis 22:00. Die meisten Feiertage haben wir ebenfalls geöffnet.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie sieht das Cover aus?</h3>
+                    <p class="faq_antwort">Auf unserer Homepage sind zahlreiche Beispiele aufgeführt. Durch ein passendes Foto aus der Fotosession oder eines, welches uns zur Verfügung gestellt wurde, wird das Cover von unseren Grafikern gestaltet. Nach den Aufnahmen besteht die Möglichkeit Gestaltungswünsche zu äußern (Titel, Bandname, etc.) Bitte achtet darauf, dass die ausgewählten Bilder sowie Texte Euren Wünschen entsprechend vom Tontechniker aufgenommen werden da eine nachträgliche Abänderung nicht ohne weiteres möglich ist.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie lange dauert es bis die fertige CD(s) inkl. Cover zugesandt wird?</h3>
+                    <p class="faq_antwort">Je nach Auftragslage müssen 1-4 Wochen nach der Aufnahme eingeplant werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit gesungen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach dem Einsingen holt der Tontechniker noch das Maximum aus den Aufnahmen raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen. Ebenfalls kann die Zeit auch nach eigener Planung überbrückt werden (Spiele etc.).</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Der Ablauf variiert je nach gebuchtem Paket und Anspruch. Grundsätzlich gibt es aber vorgegebene Produktionsmuster. Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen. Je nach Paket werden die Songs durchgesungen  oder Part für Part aufgenommen bis ein zufrieden stellendes Ergebnis erreicht ist. Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Songs sind möglich zu singen?</h3>
+                    <p class="faq_antwort">Die angegebene Song-Anzahl ist lediglich ein Richtwert. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Z.B werden erfahrungsgemäß im FUN-Standard, bei Gruppen, ein Song geschafft; wenn alles optimal läuft noch ein zweiter. Eigene Songs, abgeänderte Texte oder aufgeteilte Solo-Parts bei Gruppen sind von der Umsetzung her zeitintensiver.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich einen Termin reservieren?</h3>
+                    <p class="faq_antwort">Unter unserer Hotline (01805/200252) sind wir täglich von 9:00 bis 22:00 erreichbar. Wir helfen einen passenden Termin zu finden und reservieren diesen dann für Euch. Die verbindliche Buchungsbestätigung wird dann per E-mail versendet. Bitte habt Verständnis dafür, dass wir Termine lediglich dann blocken können, wenn Ihr Euch fest für das Event entschieden habt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer können mitsingen und wie viele mitkommen?</h3>
+                    <p class="faq_antwort">Je nach Standort sind Kapazitäten von maximal 5 bis 25 und mehr Personen möglich. Grundsätzlich können 2 Begleitpersonen mitkommen. Bei Kindergeburtstagen sind je nach Gruppengröße 1-3 Aufsichtspersonen erwünscht.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo bekomme ich die Songtexte her?</h3>
+                    <p class="faq_antwort">Unter www.singpoint.de/Songtexte könnt Ihr Euch für die Aufnahme die passenden Texte herunterladen und ausdrucken.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie bereite ich mich auf die Tonstudioaufnahme vor?</h3>
+                    <p class="faq_antwort">Es ist sehr hilfreich, wenn die gewünschten Songs vorher geübt werden.
+Je besser und öfter der Song vorab gehört und geprobt wird umso leichter wird es später im Studio. In unserem V-Studio könnt Ihr Euch auch perfekt online auf die Aufnahme vorbereiten und Tipps und Tricks einholen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer sind in den Paketen enthalten?</h3>
+                    <p class="faq_antwort">In jedem unserer Pakete ist ein Teilnehmer enthalten. Jeder weitere wird bei den FUN- Paket mit  15,- berechnet. Bei großen Gruppen sind abhängig vom Termin und Standort Pauschalpreise möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Können Getränke und Snacks mitgebracht werden?</h3>
+                    <p class="faq_antwort">Grundsätzlich können kleine Snacks mitgebracht werden. Es ist darauf zu achten, dass keine fettigen oder brösligen Lebensmittel im Studio verzehrt werden. Optimal sind z.B. Gummibärchen, Bonbons oder Tetrapacks. Getränke oder Snacks werden nicht gestellt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viel Zeit muss ich für das Event einplanen?</h3>
+                    <p class="faq_antwort">Je nach Paket werden die angegebenen Zeiten eingeplant.<br><br>FUN BASIC: ca. 45min<br>FUN STANDARD: ca.1,5 Stunden<br>FUN PREMIUM: ca. 2 Stunden</p>
+                    
+                    <h3 class="faq_frage">&bull; Ab welchem Alter kann gesungen werden?</h3>
+                    <p class="faq_antwort">Wir empfehlen das Singen im Tonstudio ab einem alter von 6 Jahren, wobei auch schon jüngere Stars den Weg zu uns gefunden haben und die Aufnahmen erfolgreich absolvieren konnten.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie weit im Voraus sollte gebucht werden?</h3>
+                    <p class="faq_antwort">Je früher gebucht wird, desto größer ist die Wahrscheinlichkeit, dass der Wunschtermin noch frei ist. Besonders bei Terminen am Wochenende raten wir frühzeitig zu buchen. Dennoch sind auch spontane Buchungen bis 3 Tage vorher möglich. Wir empfehlen hier den direkten telefonischen Kontakt um die Buchungsabwicklung noch zeitig tätigen zu können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann und wie können CDs nachbestellt werden?</h3>
+                    <p class="faq_antwort">Nach den Aufnahmen können jederzeit telefonisch unter 01805/ 200252 oder per Email weitere CDs nachbestellt werden. Solltet ihr Euch noch vor den Aufnahmen bzw. noch vor dem Coverversand entscheiden CDs nachzubestellen würden die 7,- Versandpauschale entfallen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Muss der Song(s) im Vorwege oder vor Ort ausgesucht werden?</h3>
+                    <p class="faq_antwort">Der oder die Songs sollten im Vorfeld aus unserem Archiv (<a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a>) spätestens 5 Tage vor Aufnahmetermin ausgewählt und uns mitgeteilt werden. Vor Ort ist dieses leider nicht möglich, da durch die Auswahl und die zahlreichen Songwünsche unnötig Zeit verloren gehen würde.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was sollte in das Studio mitgebracht werden?</h3>
+                    <p class="faq_antwort">- Getränke und Snacks entsprechend der Teilnehmerzahl und gebuchten Zeit.<br>- Songtexte (<a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a>)<br>- Gute Laune :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welches Paket ist für mich das richtige?</h3>
+                    <p class="faq_antwort">Für Kindergeburtstage empfehlen wir unser FUN-Standard oder unser FUN-Premium. Das FUN-Basic ist mit 45min für eine Gruppe relativ kurz bemessen und eignet sich eher für Einzelpersonen. Je nach Gruppengröße und Vorbereitung sollten beim FUN-Standard (1,5h) ein und beim FUN-Premium (2h) 2 Songs eingeplant werden. Bei guter Vorbereitung und kleiner Gruppenstärke sind aber auch mehr Songs möglich.</p>
+                </div>
+                
+                <div id="junggesellenabschied">
+                	<h2 class="faq_kategorie">Junggesellenabschied</h2>
+                    
+                    <h3 class="faq_frage">&bull; Wo befinden sich die Singpoint Tonstudios?</h3>
+                    <p class="faq_antwort">Singpoint ist deutschlandweit in zahlreichen Städten mit Tonstudios präsent. Abhängig von der derzeitigen Buchungssituation können wir passende Standorte empfehlen. Welcher Standort nun für Deine Aufnahme in Frage kommt hängt also von dem Wunschtermin, der Teilnehmerzahl und natürlich von der Erreichbarkeit für Dich ab. Grundsätzlich sind die Studios zentral gelegen und mit öffentlichen Verkehrsmitteln gut erreichbar.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei den FUN-Paketen zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 FUN-Pakete (Basic, Standard und Premium) angeboten.Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback.<br><br>Eine Einzelperson zahlt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 59,- Euro,<br>beim Standard-Paket 89,- Euro und für das Premium-Paket 129,- Euro. Bitte bedenkt, dass bei Junggesellenabschieden die Teilnehmerzahl abgerechnet wird die das Studio betritt, unabhängig davon ob Zuschauer oder Sänger.<br>Für die Lizenzierung mehrerer Playbacks (falls mehr als ein Song gewünscht wird) fallen 10,- Euro pro weiteren Titel an.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns!</p>
+                    
+                    <h3 class="faq_frage">&bull; Kann ich vorher das Studio besichtigen?</h3>
+                    <p class="faq_antwort">Leider können wir Aufgrund der großen Nachfrage keine Besichtigungen mehr anbieten. Die Tontechniker werden durch den Studiotourismus zu sehr von der eigentlichen Arbeit abgehalten und bekommen Schwierigkeiten die zeitlichen Vorgaben der Produktionen einzuhalten. Schließlich möchte man bei seiner eigenen Aufnahme auch nicht unterbrochen werden. :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welche Songs können gesungen werden?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a> können aus unserem Archiv mit über 20.000 Songs (Songs im Stile vom original Interpreten) die passenden Playbacks ausgesucht werden. Sollte der gewünschte Song nicht dabei sein besteht die Möglichkeit, in Partner-Archiven diese gegen 20,- Euro Lizenzierungsgebühr zu besorgen.<br><br>Bitte bedenke auch, dass es nicht zu jedem Song auch eine Playback-Version gibt. Eigene Playbacks können nur in Ausnahmefällen mitgebracht werden da es hier zu Kompatibilitäts-Problemen kommen kann. Ebenfalls sollte darauf geachtet werden, dass es nicht zu jedem Song auch ein passendes Playback mit Hauptstimme gibt. Ob wir euren Song in allen Versionen verfügbar haben, könnt ihr unter obigem Link erfahren.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich mir die Fotosession vorstellen?</h3>
+                    <p class="faq_antwort">Unsere Fotosession ist nicht zu verwechseln mit einem professionellen Fotoshooting. Es handelt sich ja auch in erster Linie um eine Tonstudioaufnahme. Für die Covergestaltung werden hierzu Schnappschüsse gemacht um ein passendes Motiv für das Cover zu bekommen. Gerne können auch eigene Motive und Bilder in die Gestaltung eingebunden werden. Bitte bedenkt, dass wir in seltenen Fällen, aus Zeitgründen, nur auf Euer Bildmaterial zurückgreifen können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist in den FUN-Paketen enthalten?</h3>
+                    <p class="faq_antwort">Die Pakete gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. Bei dem Premium- und dem Standart-Paketen (ab 3 Teilnehmern) ist auch noch die Fotosession und Covergestaltung enthalten. Die angegebene Zeit ist die Gesamtdauer im Tonstudio inklusive der Nachbearbeitung vom Tontechniker. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Die angegebene Song-Anzahl ist daher lediglich ein Richtwert.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann ist es möglich bei Singpoint im Studio aufzunehmen?</h3>
+                    <p class="faq_antwort">Singpoint arbeitet grundsätzlich MO-SO von 9:00 bis 22:00.<br>Für Junggesellenabschiede in manchen Fällen auch länger. :-)<br>Die meisten Feiertage haben wir ebenfalls geöffnet.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie sieht das Cover aus?</h3>
+                    <p class="faq_antwort">Auf unserer Homepage sind zahlreiche Beispiele aufgeführt. 
+Durch ein passendes Foto aus der Fotosession oder eines, welches uns zur Verfügung gestellt wurde, wird das Cover von unseren Grafikern gestaltet.  Nach den Aufnahmen besteht die Möglichkeit Gestaltungswünsche zu äußern (Titel, Bandname, etc.) Bitte achtet darauf, dass die ausgewählten Bilder sowie Texte Euren Wünschen entsprechend vom Tontechniker aufgenommen werden da eine nachträgliche Abänderung nicht ohne weiteres möglich ist.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie lange dauert es bis die fertige CD(s) inkl. Cover zugesandt wird?</h3>
+                    <p class="faq_antwort">Bei Buchungen inkl. Cover sollten, je nach Auftragslage, 1-4 Wochen nach der Aufnahme eingeplant werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit gesungen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach dem Einsingen holt der Tontechniker noch das Maximum aus den Aufnahmen raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen. Ebenfalls kann die Zeit auch nach eigener Planung überbrückt werden (Spiele etc.).</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Der Ablauf variiert je nach gebuchtem Paket und Anspruch. Grundsätzlich gibt es aber vorgegebene Produktionsmuster. Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen.<br>Je nach Paket werden die Songs durchgesungen  oder Part für Part aufgenommen bis ein zufrieden stellendes Ergebnis erreicht ist. Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Songs sind möglich zu singen?</h3>
+                    <p class="faq_antwort">Die angegebene Song-Anzahl ist lediglich ein Richtwert. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. 
+Z.B werden erfahrungsgemäß im FUN-Standard, bei Gruppen, ein Song geschafft; wenn alles optimal läuft noch ein zweiter. Eigene Songs, abgeänderte Texte oder aufgeteilte Solo-Parts bei Gruppen sind von der Umsetzung her zeitintensiver.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich einen Termin reservieren?</h3>
+                    <p class="faq_antwort">Unter unserer Hotline (01805/200252) sind wir täglich von 9:00 bis 22:00 erreichbar. Wir helfen einen passenden Termin zu finden und reservieren diesen dann für Euch. Die verbindliche Buchungsbestätigung wird dann per E-mail versendet. Bitte habt Verständnis dafür, dass wir Termine lediglich dann blocken können, wenn Ihr Euch fest für das Event entschieden habt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer können mitsingen und wie viele mitkommen?</h3>
+                    <p class="faq_antwort">Je nach Standort sind Kapazitäten von maximal 5 bis 25 und mehr Personen möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo bekomme ich die Songtexte her?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a> könnt Ihr Euch für die Aufnahme die passenden Texte herunterladen und ausdrucken.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie bereite ich mich auf die Tonstudioaufnahme vor?</h3>
+                    <p class="faq_antwort">Es ist sehr hilfreich, wenn die gewünschten Songs vorher geübt werden.
+Je besser und öfter der Song vorab gehört und geprobt wird umso leichter wird es später im Studio. In unserem V-Studio könnt Ihr Euch auch perfekt online auf die Aufnahme vorbereiten und Tipps und Tricks einholen.<br><br>Sollte eine Vorbereitung nicht möglich sein (Überraschung etc.) ist es hilfreich auf leichte und bekannte Songs zurück zu greifen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer sind in den Paketen enthalten?</h3>
+                    <p class="faq_antwort">In jedem unserer Pakete ist ein Teilnehmer enthalten. Jeder weitere wird abhängig vom Paket mit 15,- berechnet. Bei großen Gruppen sind, abhängig vom Termin und Standort, Pauschalpreise möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Können Getränke und Snacks mitgebracht werden?</h3>
+                    <p class="faq_antwort">Grundsätzlich können kleine Snacks mitgebracht werden. Es ist darauf zu achten, dass keine fettigen oder brösligen Lebensmittel im Studio verzehrt werden. Optimal sind z.B. Gummibärchen, Bonbons oder Tetrapacks. Getränke oder Snacks werden nicht gestellt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Darf Alkohol im Studio konsumiert werden?</h3>
+                    <p class="faq_antwort">Solange der Alkoholpegel niedrig bleibt ist dagegen nichts einzuwenden. Bitte bedenkt, dass im Studio selber wertvolles Equipment steht und dieses auch für die nächste Produktion zum Einsatz kommen soll. </p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viel Zeit muss ich für das Event einplanen?</h3>
+                    <p class="faq_antwort">Je nach Paket werden die angegebenen Zeiten eingeplant.<br><br>FUN BASIC: ca. 45min<br>FUN STANDARD: ca.1,5 Stunden<br>FUN PREMIUM: ca. 2 Stunden</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie weit im Voraus sollte gebucht werden?</h3>
+                    <p class="faq_antwort">Je früher gebucht wird, desto größer ist die Wahrscheinlichkeit, dass der Wunschtermin noch frei ist. Besonders bei Terminen am Wochenende raten wir frühzeitig zu buchen. Dennoch sind auch spontane Buchungen bis 3 Tage vorher möglich. Wir empfehlen hier den direkten telefonischen Kontakt um die Buchungsabwicklung noch zeitig tätigen zu können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann und wie können CDs nachbestellt werden?</h3>
+                    <p class="faq_antwort">Nach den Aufnahmen können jederzeit telefonisch unter 01805/ 200252 oder per Email weitere CDs nachbestellt werden. Solltet ihr Euch noch vor den Aufnahmen bzw. noch vor dem Coverversand entscheiden CDs nachzubestellen würden die 7,- Versandpauschale entfallen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Muss der Song(s) im Vorwege oder vor Ort ausgesucht werden?</h3>
+                    <p class="faq_antwort">Der oder die Songs sollten im Vorfeld aus unserem Archiv (<a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a>) spätestens 5 Tage vor Aufnahmetermin ausgewählt und uns mitgeteilt werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was sollte in das Studio mitgebracht werden?</h3>
+                    <p class="faq_antwort">- Getränke und Snacks entsprechend der Teilnehmerzahl und gebuchten Zeit.<br>- Songtexte (<a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a>)<br>- Gute Laune :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welches Paket ist für mich das richtige?</h3>
+                    <p class="faq_antwort">Für Junggesellenabschiede empfehlen wir unser FUN-Standard oder unser FUN-Premium. Das FUN-Basic ist mit 45min für eine Gruppe relativ kurz bemessen und eignet sich eher für Einzelpersonen. Je nach Gruppengröße und Vorbereitung sollten beim FUN-Standard (1,5h) ein und beim FUN-Premium (2h) 2 Songs eingeplant werden. Bei guter Vorbereitung und kleiner Gruppenstärke sind aber auch mehr Songs möglich.</p>
+                </div>
+                
+                <div id="firmenfeiern">
+                	<h2 class="faq_kategorie">Firmen-Vereinsfeiern</h2>
+                    
+                    <h3 class="faq_frage">&bull; Welche Möglichkeit hat Singpoint für Event-Veranstaltungen?</h3>
+                    <p class="faq_antwort">Singpoint bietet zwei Möglichkeiten Euer Event zu gestalten. Zum einen kann die Veranstaltung in den Singpoint Studios erfolgen, zum anderen können wir mit der SING-BOX direkt zu Euch kommen und unser mobiles Tonstudio bei Euch aufbauen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo befinden sich die Singpoint Tonstudios?</h3>
+                    <p class="faq_antwort">Singpoint ist deutschlandweit in zahlreichen Städten mit Tonstudios präsent. Abhängig von der derzeitigen Buchungssituation können wir passende Standorte empfehlen. Welcher Standort nun für Deine Aufnahme in Frage kommt hängt also von dem Wunschtermin, der Teilnehmerzahl und natürlich von der Erreichbarkeit für Dich ab. Grundsätzlich sind die Studios zentral gelegen und mit öffentlichen Verkehrsmitteln gut erreichbar.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei den FUN-Paketen zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 FUN-Pakete (Basic, Standard und Premium) angeboten. Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback.<br><br>Eine Einzelperson zahlt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 59,- Euro, beim Standard-Paket 89,- Euro und für das Premium-Paket 129,- Euro. Jeder weitere Teilnehmer wird mit 15,- Euro berechnet. Falls mehrere Songs aufgenommen aufgenommen werden sollen, wird für jeden weiteren Song, der nicht bereits im Paket enthalten ist eine Lizenz-Gebühr von 10,00 Euro fällig.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns!</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie setzt sich der Preis bei dem SING-BOXEvent zusammen?</h3>
+                    <p class="faq_antwort">Auf unserer Internetseite werden 3 FUN-Pakete (Basic, Standard und Premium) angeboten. Die angegebenen Preise gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback.<br><br>Pro Person fällt für die Aufnahme im Rahmen einer Basic-Paket-Buchung 39,- Euro/p.P.,<br>
+beim Standard-Paket 57,- Euro/p.P. und für das Premium-Paket 79,- Euro/p.P. an.<br>
+Mindestbuchung liegt bei 20 Teilnehmern.<br>
+Jeder weitere Teilnehmer wird mit 20,- Euro berechnet - bei dem Premium-Paket 25,-p.P.<br>
+Für die Lizenzierung weiterer Playbacks (falls mehr als ein Song gewünscht wird) fallen 10,- Euro pro Titel an.<br><br>Grundsätzlich können wir abhängig vom Termin und der Größe der Teilnehmergruppe Pauschalpreise vereinbaren. Wir finden für jedes Budget eine Lösung. Testet uns!</p>
+                    
+                    <h3 class="faq_frage">&bull; Kann ich vorher das Studio besichtigen?</h3>
+                    <p class="faq_antwort">Leider können wir Aufgrund der großen Nachfrage keine Besichtigungen mehr anbieten.Die Tontechniker werden durch den Studiotourismus zu sehr von der eigentlichen Arbeit abgehalten und bekommen Schwierigkeiten die zeitlichen Vorgaben der Produktionen einzuhalten. Schließlich möchte man bei seiner eigenen Aufnahme auch nicht unterbrochen werden. :-)</p>
+                    
+                    <h3 class="faq_frage">&bull; Welche Songs können gesungen werden?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a> können aus unserem Archiv mit über 20.000 Songs die passenden Playbacks ausgesucht werden. Sollte der gewünschte Song nicht dabei sein besteht die Möglichkeit, in Partner-Archiven diese gegen 20,- Euro Lizenzierungsgebühr zu besorgen.<br><br>Bitte bedenke auch, dass es nicht zu jedem Song auch eine Playback-Version gibt. Eigene Playbacks können nur in Ausnahmefällen mitgebracht werden da es hier zu Kompatibilitäts-Problemen kommen kann. Ebenfalls sollte darauf geachtet werden, dass es nicht zu jedem Song auch ein passendes Playback mit Hauptstimme gibt. Ob wir euren Song in allen Versionen verfügbar haben, könnt ihr unter obigem Link erfahren.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich mir die Fotosession vorstellen?</h3>
+                    <p class="faq_antwort">Unsere Fotosession ist nicht zu verwechseln mit einem professionellen Fotoshooting. Es handelt sich ja auch in erster Linie um eine Tonstudioaufnahme. Für die Covergestaltung werden hierzu Schnappschüsse gemacht um ein passendes Motiv für das Cover zu bekommen. Gerne können auch eigene Motive und Bilder in die Gestaltung eingebunden werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist in den FUN-Paketen enthalten?</h3>
+                    <p class="faq_antwort">Die Pakete gelten grundsätzlich inklusive einem Teilnehmer, einer CD und einem Playback. Bei dem Premium- und dem Standart-Paketen (ab 3 Teilnehmern) ist auch noch die Fotosession und Covergestaltung enthalten. Die angegebene Zeit ist die Gesamtdauer im Tonstudio inklusive der Nachbearbeitung vom Tontechniker. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. Die angegebene Song-Anzahl ist daher lediglich ein Richtwert.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann ist es möglich bei Singpoint im Studio aufzunehmen?</h3>
+                    <p class="faq_antwort">Singpoint arbeitet grundsätzlich MO-SO von 9:00 bis 22:00. Die meisten Feiertage haben wir ebenfalls geöffnet.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie sieht das Cover aus?</h3>
+                    <p class="faq_antwort">Auf unserer Homepage sind zahlreiche Beispiele aufgeführt. Durch ein passendes Foto aus der Fotosession oder eines, welches uns zur Verfügung gestellt wurde, wird das Cover von unseren Grafikern gestaltet. Nach den Aufnahmen besteht die Möglichkeit Gestaltungswünsche zu äußern (Titel, Bandname, etc.) Bitte achtet darauf, dass die ausgewählten Bilder sowie Texte Euren Wünschen entsprechend vom Tontechniker aufgenommen werden da eine nachträgliche Abänderung nicht ohne weiteres möglich ist.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie lange dauert es bis die fertige CD(s) inkl. Cover zugesandt wird?</h3>
+                    <p class="faq_antwort">Je nach Auftragslage müssen 1-4 Wochen nach der Aufnahme eingeplant werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wird über die komplette Studiozeit gesungen?</h3>
+                    <p class="faq_antwort">Ein gutes Ergebnis erfordert auch eine entsprechende Nachbearbeitung.
+Nach dem Einsingen holt der Tontechniker noch das Maximum aus den Aufnahmen raus. Das bedarf ein wenig Zeit. Diese kann z.B. dafür genutzt werden um sich, falls in der Buchung enthalten, auf den nächsten Song vorzubereiten oder sich schon einmal Gedanken über das Cover  (Motiv, Titel, Bandnamen) zu machen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie ist der Ablauf im Tonstudio?</h3>
+                    <p class="faq_antwort">Der Ablauf variiert je nach gebuchtem Paket und Anspruch. Grundsätzlich gibt es aber vorgegebene Produktionsmuster. Nach der Ankunft und einer kleinen Ablaufsbeschreibung können die vorbereiteten Songs eingesungen werden. Diesbezüglich werden wichtige Details besprochen um auch ein optimales Ergebnis beim Einsingen zu erreichen.Je nach Paket werden die Songs durchgesungen  oder Part für Part aufgenommen bis ein zufrieden stellendes Ergebnis erreicht ist.<br><br>Danach folgt die Nachbearbeitung und Aufbereitung des Songs. Diese Zeit kann ggf. für die Vorbereitung des nächsten Songs bzw. für die Planung der Covergestaltung genutzt werden. Nachdem der letzte Song nachbearbeitet wurde werden Fotos für das Cover gemacht sowie die Gestaltungswünsche festgehalten. Eine Vorab-CD gibt es dann gleich nach der Session. Je nach Buchung gibt es dann per Post innerhalb von 1-4 Wochen eine weitere CD, inklusive Cover.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Songs sind möglich zu singen?</h3>
+                    <p class="faq_antwort">Die angegebene Song-Anzahl ist lediglich ein Richtwert. Wie viele Songs eingesungen werden können ist stark abhängig von der Gruppengröße, dem Anspruch und der Vorbereitung. 
+Z.B werden erfahrungsgemäß im FUN-Standard, bei Gruppen, ein Song geschafft; wenn alles optimal läuft noch ein zweiter. Eigene Songs, abgeänderte Texte oder aufgeteilte Solo-Parts bei Gruppen sind von der Umsetzung her zeitintensiver.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie kann ich einen Termin reservieren?</h3>
+                    <p class="faq_antwort">Unter unserer Hotline (01805/200252) sind wir täglich von 9:00 bis 22:00 erreichbar. Wir helfen einen passenden Termin zu finden und reservieren diesen dann für Euch. Die verbindliche Buchungsbestätigung wird dann per E-mail versendet. Bitte habt Verständnis dafür, dass wir Termine lediglich dann blocken können, wenn Ihr Euch fest für das Event entschieden habt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer können mitsingen und wie viele mitkommen?</h3>
+                    <p class="faq_antwort">In unseren Studios können je nach Standort von maximal 5 bis 25 und mehr Personen gleichzeitig singen. Beim trennen  der Gruppe sind auch je nach Studiokapazitäten mehrere Teilnehmer möglich. Mit der SING-BOX ist theoretisch keine Teilnehmer-Begrenzung vorhanden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wo bekomme ich die Songtexte her?</h3>
+                    <p class="faq_antwort">Unter <a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a> könnt Ihr Euch für die Aufnahme die passenden Texte herunterladen und ausdrucken.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie bereite ich mich auf die Tonstudioaufnahme vor?</h3>
+                    <p class="faq_antwort">Es ist sehr hilfreich, wenn die gewünschten Songs vorher geübt werden.
+Je besser und öfter der Song vorab gehört und geprobt wird umso leichter wird es später im Studio. In unserem V-Studio könnt Ihr Euch auch perfekt online auf die Aufnahme vorbereiten und Tipps und Tricks einholen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viele Teilnehmer sind in den Paketen enthalten?</h3>
+                    <p class="faq_antwort">In jedem unseren FUN-Pakete ist ein Teilnehmer enthalten. Jeder weitere wird mit   15,-  berechnet. Bei großen Gruppen sind abhängig vom Termin und Standort Pauschalpreise möglich.</p>
+                    
+                    <h3 class="faq_frage">&bull; Können Getränke und Snacks mitgebracht werden?</h3>
+                    <p class="faq_antwort">Grundsätzlich können kleine Snacks mitgebracht werden. Es ist darauf zu achten, dass keine fettigen oder brösligen Lebensmittel im Studio verzehrt werden. Optimal sind z.B. Gummibärchen, Bonbons oder Tetrapacks. Getränke oder Snacks werden nicht gestellt.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie viel Zeit muss ich für das Event einplanen?</h3>
+                    <p class="faq_antwort">Je nach Paket werden die angegebenen Zeiten eingeplant.<br><br>FUN BASIC: ca. 45min<br>FUN STANDARD: ca.1,5 Stunden<br>FUN PREMIUM: ca. 2 Stunden<br><br>PRO BASIC: 2-3Stunden<br>PRO STANDARD: 4-5 Stunden<br>PRO PREMIUM: 7-8 Stunden</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie weit im Voraus sollte gebucht werden?</h3>
+                    <p class="faq_antwort">Je früher gebucht wird, desto größer ist die Wahrscheinlichkeit, dass der Wunschtermin noch frei ist. Besonders bei Terminen am Wochenende raten wir frühzeitig zu buchen. Dennoch sind auch spontane Buchungen bis 3 Tage vorher möglich. Wir empfehlen hier den direkten telefonischen Kontakt um die Buchungsabwicklung noch zeitig tätigen zu können.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wann und wie können CDs nachbestellt werden?</h3>
+                    <p class="faq_antwort">Nach den Aufnahmen können jederzeit telefonisch unter 01805/ 200252 oder per Email weitere CDs nachbestellt werden. Solltet ihr Euch noch vor den Aufnahmen bzw. noch vor dem Coverversand entscheiden CDs nachzubestellen würden die 7,- Versandpauschale entfallen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Müssen Songs im Vorwege oder vor Ort ausgesucht werden?</h3>
+                    <p class="faq_antwort">Der oder die Song sollten im Vorfeld aus unserem Archiv (<a href="http://www.singpoint.de/Playbacks">www.singpoint.de/Playbacks</a>) spätestens 5 Tage vor Aufnahmetermin ausgewählt und uns mitgeteilt werden.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was sollte in das Studio mitgebracht werden?</h3>
+                    <p class="faq_antwort">- Getränke und Snacks entsprechend der Teilnehmerzahl und gebuchten Zeit.<br>- Songtexte (<a href="http://www.singpoint.de/Songtexte">www.singpoint.de/Songtexte</a>)<br>- Gute Laune :-)</p>
+            	</div>
+                
+                <div id="vstudio">
+                	<h2 class="faq_kategorie">V-Studio</h2>
+                    
+                    <h3 class="faq_frage">&bull; Was ist das V-Studio?</h3>
+                    <p class="faq_antwort">Das Singpoint V-Studio ist Dein Online-Tonstudio für zu Hause! Du bist der Produzent, du bist der Tonmeister, du bist der Künstler... Produziere und bearbeite Deine eigenen Songs und gestalte dazu Dein einzigartiges CD-Cover  ganz einfach online am eigenen PC oder Mac und das 24h, 365 Tage im Jahr. Ebenfalls bekommst Du hier zahlreiche Tipps und Tricks zum Gesang und Recording. Alles, was benötigt wird ist ein Internetanschluss, ein Mikrofon und ein Paar Kopfhörer/Lautsprecher... Lege jetzt los!</p>
+            	</div>
+                
+                
+                <div id="song">
+                	<h2 class="faq_kategorie">Song</h2>
+                    
+                    <h3 class="faq_frage">&bull; Was ist das Song Paket?</h3>
+                    <p class="faq_antwort">Mit unserer Singpoint SONG-Variante kannst Du Deine eigenen musikalischen Ideen umsetzen - auch ohne Vorkenntnisse in Komposition, Texten, Arrangement, Gesang, Musiktheorie oder Recording. Wir ermöglichen Dir eine exklusive und professionelle Produktion Deines eigenen Songs!</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie entsteht mein eigener Song?</h3>
+                    <p class="faq_antwort">Um eine Vorstellung davon zu bekommen, wie der Song in Deinem Kopf klingt, benötigen wir von Dir ein paar Vorgaben in Form von Song-Beispielen. Diese Referenz-Songs helfen uns dabei, die Stielrichtung und Struktur des Songs zu definieren. Sämtliche Musikrichtungen sowie Mischungen von verschiedenen Tracks und Sounds sind hier möglich. So können auch ganz neue und innovative Stilrichtungen entstehen. Anhand Deiner Vorgaben wird nun, nach ausgiebiger Beratung, ein Instrumental für Dich  komponiert und arrangiert  ein absolutes Unikat! Mit dem Instrumental kannst Du Dich dann auf die Aufnahmen im Tonstudio vorbereiten und Text und Instrumental einander angleichen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was passiert im Tonstudio?</h3>
+                    <p class="faq_antwort">In einer ca. 7-8 stündigen Studio-Session werden die Vocals gemeinsam mit dem Tontechniker zum Instrumental aufgenommen. Das ganze geschieht "Step by Step" und mit kompetenter Unterstützung, so dass auch hier viel Spielraum für Korrekturen besteht. Ganz nach Deinen Vorstellungen können hier Details verfeinert und auch zusätzliche Stimmen eingesungen werden. Sind die Aufnahmen "im Kasten", beginnt die Postproduktion (Editing, Mixing & Mastering). Hier werden die Aufnahmen mit High-End Equipment und Effekten nachbearbeitet und auf das Niveau der Radio-Charts gebracht.</p>
+                    
+                    <h3 class="faq_frage">&bull; Mit welchen AddOns kann ich meine Song-Produktion erweitern?</h3>
+                    <p class="faq_antwort">Mit welchen AddOns kann ich meine Song-Produktion erweitern?
+PLUS-PRODUKTION - Für besonders aufwendige Produktionen und Arrangements bieten wir Dir mit diesem Add-on ein zusätzliches Plus an Möglichkeiten. Mehrere Referenz-Songs, live eingespielte Instrumenten-Parts und komplexere Ideen können so umgesetzt werden.
+LYRICS - Sollte das Texten nicht Deine Stärke sein, kannst Du Dir mit unserem Lyrics Add-on ganz nach Deinen Wünschen einen eigenen Text schreiben lassen. Thema, Stilrichtung und weitere Schlagworte lieferst natürlich Du. So entsteht einzigartige Poesie
+auf Basis Deiner Vorstellungen.<br><br>
+MUSIKVIDEO - Unser Video Add-On ist mehr als eine Erweiterung. Hier gibt es ein komplettes Musikvideo zum eigenen Song! Damit wird der Song zu einer professionellen Performance - denn das Auge hört mit!<br><br>
+VOCAL-COACHING - Um am Tag der Aufnahme das Maximum aus Deiner Stimme herauszubekommen, kannst Du Dir mit einem individuellen Vocal-Coaching unter die Arme greifen lassen.<br><br>
+VARIATION - Wir erstellen Dir auf Wunsch eine alternative Version Deines Instrumentals.</p>
+            	</div>
+                
+                
+                <div id="story">
+                	<h2 class="faq_kategorie">Story</h2>
+                    
+                    <h3 class="faq_frage">&bull; Was bietet mir das Story Paket?</h3>
+                    <p class="faq_antwort">Im Story Paket zählt das gesprochene Wort! Gedichte, Kurzgeschichten oder Erzählungen aus dem Leben (Autobiographie) - kreiere Deine eigene STORY ganz nach eigenen Vorstellungen und Ideen! Die eigene Stimme verleiht der Story dabei ihren ganz persönlichen Charakter. In Zeiten von mp3 sind die Geschichten zum Hören überall parat und somit auch eine ideale Geschenkidee für Freunde und Verwandte.</p>
+                    
+                    <h3 class="faq_frage">&bull; Wie wird meine Story produziert?</h3>
+                    <p class="faq_antwort">Ob Hörbuch oder Hörspiel. Deine Story ist einzigartig. Im Gegensatz zu einem Hörbuch wird die Handlung bei einem Hörspiel durch Sound-Effekte zusätzlich untermalt. Dies muss in der Produktion natürlich zeitlich berücksichtigt werden. In unseren Paketen findest Du daher Richtwerte für die effektive Spieldauer. Um zu sehen, ob Dein Text die entsprechende Spieldauer ausfüllt, ist es wichtig, das eigene Meisterwerk im Vorwege ein paar mal im gewünschten Tempo zu proben und dabei die Zeit zu stoppen. Die akustisch optimierten Räumlichkeiten und professionelle Aufnahme-Technik unserer Tonstudios lässt die Stimme auf höchstem Niveau klingen. Zudem steht eine umfangreiche Auswahl an Sound-Effekten und Musik-Stimmungen zur Verfügung, um dem Hörspiel, mit faszinierender 3D-Sound-Technologie*, eine zusätzliche, erzählerische Dimension zu verliehen.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was bedeutet Multimedia-Part?</h3>
+                    <p class="faq_antwort">Der "Multimedia-Part" der Story-CD erscheint, wenn man die CD in einen Computer einlegt. Hier können dann beispielsweise eine Foto-Galerie, Videos, der Story-Text oder andere Dinge eingebunden werden.</p>
+            	</div>
+                
+                <div id="musikvideo">
+                	<h2 class="faq_kategorie">Musikvideo</h2>
+                    
+                    <h3 class="faq_frage">&bull; Was ist das Musikvideo AddOn?</h3>
+                    <p class="faq_antwort">Auffallen, inszenieren, ein Gesamtkunstwerk schaffen. Mit dem Musikvideo-AddOn setzt Du Dein Musikstück zu einer persönlichen audio-visuellen Performance um. Produziere ein komplettes, professionelles Musikvideo zu Deinem Song! Damit öffnen sich Dir als Künstler ganz neue Welten des Imageaufbaus - sehen und gehört werden!</p>
+                    
+                    <h3 class="faq_frage">&bull; Was bekomme ich mit dem Musikvideo AddOn?</h3>
+                    <p class="faq_antwort">In einer ca. 2-3 stündigen Studioproduktion werden Deine eigenen Ideen professionell und individuell verwirklicht. White- & Black-Screen, Licht, Kamera-Kran, Dolly-Fahrten und vieles mehr. Die Möglichkeiten in der Postproduktion sind zudem grenzenlos.</p>
+                    
+                    <h3 class="faq_frage">&bull; Womit kann das Musikvideo-AddOn erweitert werden?</h3>
+                    <p class="faq_antwort">Die Video-Produktion kann um verschiedene weitere Aspekte und Techniken der professionellen Video-Produktion, erweitert werden.<br>
+GREENSCREEN - Du möchtest eine besondere Kulisse die nicht so einfach für uns zu erreichen ist? Mit der Greenscreen Technik holen wir die Kulisse ins Video ohne vor Ort zu sein.<br><br>
+ON-LOCATION - Für besondere Drehorte nach Deiner Wahl, die außerhalb des Studios liegen und ggf. eine Drehlizenz, weitere Kulissen, Statisten oder Requisiten benötigen.<br><br>
+SPECIAL-EFFECT - Du hast schon eine genauere Vorstellung und möchtest einen besonderen Effekt in Deinem Video sehen? Den Wunsch kannst Du Dir hiermit erfüllen.<br><br>
+VARIATION - Wir erstellen Dir auf Wunsch eine alternative Version Deines Videos.</p>
+                    
+                    <h3 class="faq_frage">&bull; Was ist das Musikvideo AddOn?</h3>
+                    <p class="faq_antwort">Auffallen, inszenieren, ein Gesamtkunstwerk schaffen. Mit dem Musikvideo-AddOn setzt Du Dein Musikstück zu einer persönlichen audio-visuellen Performance um. Produziere ein komplettes, professionelles Musikvideo zu Deinem Song! Damit öffnen sich Dir als Künstler ganz neue Welten des Imageaufbaus - sehen und gehört werden!</p>
+            	</div>
+        	</div>
+		</div>
+		<div class="box_foot"></div>
+	</div> <!-- middle end -->
+					
+				</div>
+
+			</div>
+			
+			<div style="clear: both;"></div>
+			
+			<div id="footer">
+			
+				<div style="height: 32px; background: url(img/bg_balken.gif);"></div>
+				
+				<table class="navi" width="100%" cellpadding="10" cellspacing="0" border="0" style="padding: 0 4px;">
+                  <tr valign="top">
+                    <td width="148"><p>Singpoint</p>
+                        <a href="/studios.html">Studios</a><br/>
+                        <a href="/vstudio.html">V-Studio</a><br/>
+                        <a href="/sing-box.html">Sing-Box</a><br/>
+                        <br/>
+                    </td>
+                    <td width="148"><p>Kontakt</p>
+                        <a href="/contact.html">Kontaktdaten</a><br/>
+                        <a href="/contact.html">Feedback</a><br/>
+                        <a href="/contact.html">Deine Idee</a><br/>
+                        <a href="/contact.html">Newsletter</a><br/>
+                    </td>
+                    <td width="148"><p>Unterhaltung</p>
+                        <p><a href="/Singpoint_TV.html">Singpoint TV<br>
+                          </a><a href="/http://www.singpoint.de/news/">News-Blog<br>
+                          </a><a href="/Spiele.html">Spiele</a><br/>
+                          <a href="/Vocal_Coaching.html">Vocal-Coaching</a><br/>
+                          <a href="/#"></a><br/>
+                      </p></td>
+                    <td width="148"><p>B2B</p>
+                        <a href="/Firmenkunden.html">Firmenkunden</a><br/>
+                        <a href="/Partnerprogramme.html">Partnerprogramme</a><br/>
+                        <a class="navi" href="/Sponsoring.html">Sponsoring</a><br/>
+                        <a href="/Presse.html">Presse</a><br/>
+                    </td>
+                    <td width="148"><p>Shopping </p>
+                        <p><a href="/playbacks_songtexte.html" target="_blank">Playbacks &amp; Lyrics</a><a href="/contact.html"><br>
+                          CD-Nachbestellung<br>
+                          </a><a href="/gutschein/index.php">Gutscheine<br>
+                          </a><a href="/sing_shop.html">Sing-Shop</a><br/>
+                      </p></td>
+                    <td width="148"><p>Specials</p>
+                        <a href="/Angebot_des_Monats.html">Angebot des Monats</a><br/>
+                        <a href="/Special_Events.html">Special-Events</a><br>
+                        <a href="/Verlosungen.html">Verlosungen</a><br/>
+                    </td>
+                    <td width="62"><p>About</p>
+                        <p><a href="/UberSingpoint.html">Über SP</a><br/>
+                            <a href="/faq.html">FAQ</a><br/>
+                            <a href="/Impressum.html">Impressum</a><br>
+                          <a href="/Jobs.html">Jobs</a><br/>
+                      </p></td>
+                  </tr>
+                </table>
+			  <div style="font-size: 11px; padding: 8px 56px; margin-top: 10px; height: 48px; background: url(http://www.singpoint.de/img/microphone.gif) no-repeat;">Copyright &copy; Singpoint. All rights reserved.<br>
+Durch Nutzung dieser Website akzeptieren Sie unsere Nutzungsbedingungen. <br />
+</div>
+				
+		  </div>
+			
+		</div>
+		
+		<script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-1352004-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

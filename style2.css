@@ -1,0 +1,58 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: #777777;
+}
+
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th {
+	margin: 0pt;
+	padding: 0pt;
+}
+
+ul {
+	margin: 2px;
+}
+
+p.margin_botton {
+	padding-bottom: 14px;
+}
+
+ul {
+	padding-left: 15px;
+}
+
+#main_wrapper {
+	text-align: left;
+	margin:0px auto;
+	width:483px;
+}
+#main_wrapper p{
+	margin-bottom:20px;
+	font-size:11px;
+}
+div.input{
+	width:200px;
+	float:left;
+	margin-right:20px;
+}
+div.uploader{
+	float:left;
+}
+div.manual{
+	font-size:11px;
+	text-align:left;
+}
+#main_wrapper input[type=text]{
+	width:200px;
+	height:20px;
+}
+#main_wrapper input[type=password]{
+	width:200px;
+	height:20px;
+}
+#main_wrapper input[type=submit]{
+}
+label {
+	font-weight: bold;
+}

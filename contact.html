@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Singpoint Dein Tonstudio - Kontakt</title>
+		<link href="styles-1.2.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="Scripts/jquery-1.9.1.min.js"></script>
+    	<script type="text/javascript" src="Scripts/menu.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-jvectormap.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-jvectormap-de-mill-en.js"></script>
+        <script type="text/javascript" src="Scripts/singpoint-landkarte1.1.js"></script>
+        <style type="text/css">
+<!--
+.Stil3 {font-size: 9}
+-->
+        </style>
+        <script type="text/javascript">
+        function checkForm(){
+			var nachricht = document.getElementById('k_nachricht').value;
+			var vorname = document.getElementById('k_vorname').value;
+			var nachname = document.getElementById('k_nachname').value;
+			var email = document.getElementById('k_email').value;
+			var telefon = document.getElementById('k_telefon').value;
+			var anr = document.getElementById('k_anrede');
+			var index = anr.selectedIndex;
+			var anrede = anr.options[index].value;
+			var e = 0;
+			var m = '';
+			if(!nachricht){e++; m = m +  "- Anfrage\n";}
+			if(!anrede){e++; m = m +  "- Anrede\n";}
+			if(!vorname){e++; m = m +  "- Vorname\n";}
+			if(!nachname){e++; m = m +  "- Nachname\n";}
+			if(!email){e++; m = m +  "- E-mail\n";}
+			if(!telefon){e++; m = m +  "- Telefonnummer\n";}
+			
+			if(!e) return true;
+			alert("Folgende Informationen werden noch benötigt:\n\n" + m);
+			return false;
+		}
+</script>
+</head>
+	
+	<body>
+	
+		<div id="main_wrapper">
+			<div id="top">
+			<div style="height: 73px;">
+				<div class="mainlogo" onClick="document.location.href='http://www.singpoint.de/';"></div>
+                <div style="float: right; margin-top: 37px; margin-right: 10px; height: 22px; width: 500px">
+                    <div style="float:right;">
+                        <img alt="Deutschland Flagge" src="img/flag_de.gif" style="margin-right: 5px"/>
+                        <img alt="England Flagge" src="img/flag_en.gif" style="margin-right: 5px"/>
+                        <img alt="Frankreich Flagge" src="img/flag_fr.gif"/>
+                    </div>
+
+                    <div style="float:right; padding-top: 4px; margin-right: 10px">
+                        <ul class="top_navigation">
+    <li><a href="contact.html">Kontakt</a></li>
+    <li id="menu_trigger1"
+        onmouseover="menu_activ('menu_label1',true,'menu_sub1');"
+        onmouseout="menu_activ('menu_label1',false,'menu_sub1');">
+        <a id="menu_label1" href="UberSingpoint.html">Über Singpoint</a>
+
+        <div class="menu_sub" id="menu_sub1" onMouseOver="menu_activ('menu_label1',true,null);">
+            <img alt="Pfeil zu Tonstudio Angeboten" src="img/submenu_arrow.jpg"/>
+
+            <div class="submenu_content">
+                <h4>Das Tonstudio für Alle.</h4>
+
+                <div class="submenu_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/kindergeburtstag.html">Kindergeburtstag</a></li>
+                        <li><a href="http://www.singpoint.de/sing-point_event_info.html">Firmen-/Vereinsfeiern</a></li>
+                        <li><a href="http://www.singpoint.de/junggesellenabschied.html">Junggesellenabschied</a></li>
+                        <li><a href="http://www.singpoint.de/junggesellinnenabschied.html">Junggesellinnenabschied</a></li>
+                        <li><a href="http://www.singpoint.de/weihnachtsfeier.html">Weihnachtsfeier</a></li>
+                        <li><a href="http://www.singpoint.de/baby-cd.html">Baby-CD</a></li>
+                    </ul>
+                </div>
+                <div class="submenu_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/studios_song_info.html">Dein eigener Song</a></li>
+                        <li><a href="http://www.singpoint.de/studios_pro_info.html">Demo-CD</a></li>
+                        <li><a href="http://www.singpoint.de/studios_pro.html">Bandaufnahmen</a></li>
+                        <li><a href="http://www.singpoint.de/studios_story_info.html">Dein Hörbuch</a></li>
+                        <li><a href="http://www.singpoint.de/musikvideo_info.html">Musikvideo</a></li>
+                    </ul>
+                </div>
+                <div class="submenu_col" id="last_col">
+                    <ul>
+                        <li><a href="http://www.singpoint.de/gutschein/">Gutscheine</a></li>
+                        <li><a href="http://www.singpoint.de/playbacks_songtexte.html">Playbacks & Lyrics</a></li>
+                        <li><a href="http://www.singpoint.de/vstudio.html">Online Tonstudio</a></li>
+                        <li><a href="http://www.singpoint.de/Vocal_Coaching.html">Vocal Coaching</a></li>
+                        <li><a href="http://www.singpoint.de/club/">Singpoint Club</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li><a href="http://www.singpoint.de/gutschein/index.php">Gutscheine</a></li>
+    <li class="top_navigation_last"><a href="http://www.singpoint.de/faq.html">FAQ</a></li>
+</ul>
+                    </div>
+                </div>
+			</div>
+			<div style="height:32px; background:url(img/bg_balken.gif);"></div>
+		</div>
+
+		<div id="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sub_content">
+	<div class="top_sub_navi">
+		<a href="index.html">HOME</a> | <a href="#" class="active">KONTAKT</a>		
+	</div>
+	
+	<div class="bg_balken_top"></div>
+	
+	
+	
+			
+		<div class="contact_wr" id="contact_left">
+			<h1>Wir freuen uns auf Euch!</h1>
+            
+            <div class="contact_wr">
+				<div class="headline_bg">
+			  		<h2>Service Hotline</h2>
+		    	</div>
+            </div>
+			<p><img src="img/contact/phone.jpg" alt="" /><br>
+			    <br>
+		        <br>
+	          <br />
+          </p>
+			
+        <div class="headline_bg">
+			  <h2>Rückruf-Service</h2>
+		  </div>
+			<form method="post" action="sendmail.php">
+		
+		<input type="hidden" name="senden" value="ok" />
+			<h3>Anfrage</h3>
+			<div id="form_wr" style="background-image: url(img/contact/bg_small.gif); height: 165px">
+				<table width="100%" border="0">
+					<tr valign="top">
+						<td width="45%">Betreff*</td>
+						<td width="50%" align="left">
+							<select name="betreff" style="width: 100%">
+								<option value="Terminanfrage">Terminanfrage</option>
+								<option value="CD-Nachbestellung">CD-Nachbestellung</option>
+								<option value="Feedback">Feedback</option><br>
+								<option value="Deine Idee">Deine Idee</option><br>
+								<option value="Business-Anfrage">Business- Anfrage</option>
+								<option value="Presseanfrage">Presseanfrage</option>
+                                <option value="Allgemeine_Fragen">Allgemeine Fragen</option><br>
+						  </select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>Anfrage*</td>
+						<td align="left">
+							<textarea id="k_nachricht" name="text" style="width: 99%; height: 100px;"></textarea>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<h3>Kontaktdaten</h3>
+			<div id="form_wr" style="background-image: url(img/contact/bg_big.gif); height: 184px">
+				<table width="100%" border="0">
+					<tr valign="top">
+						<td width="45%">Anrede*</td>
+						<td width="50%" align="left">
+							<select id="k_anrede" name="anrede" style="width: 100%">
+								<option value="keine">Bitte auswählen</option>
+								<option>Herr</option>
+								<option>Frau</option>
+							</select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>Vorname*</td>
+						<td align="left">
+							<input id="k_vorname" name="vorname" type="text" style="width: 99%;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>Nachname*</td>
+						<td align="left">
+							<input id="k_nachname" name="nachname" type="text" style="width: 99%;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>E-Mail*</td>
+						<td align="left">
+							<input id="k_email" name="email" type="text" style="width: 99%;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>Telefonnummer*</td>
+						<td align="left">
+							<input id="k_telefon" name="telefon" type="text" style="width: 99%;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>Newsletter</td>
+						<td align="left">
+							<input name="newsletter" type="checkbox" value="Ja" />
+						</td>
+					</tr>
+                    <div style="position:absolute; margin:130px 0px 0px 450px;">* Pflichtfeld</div>
+				</table>
+			</div>
+			
+		  </div>
+          
+          <div id="contact_rechts">
+          	<a href="http://www.singpoint.de/onlinebooking/index.php"><img id="video_faq" src="http://www.singpoint.de/img/Online-Buchung.jpg" alt="Zur Singpoint Onlinebuchung" /></a>
+            <a href="http://www.singpoint.de/textfaq.html"><img id="text_faq" src="http://www.singpoint.de/img/faq_zum_nachlesen.jpg" alt="FAQ zum Nachlesen"></a>
+          </div>
+          <div style="clear:both;"></div>
+		  
+          <div id="submit">
+				<input onClick="return checkForm();" type="submit" value="Senden">
+			<br>
+		  </div>
+			
+          <div class="contact_wr">
+			<div class="headline_bg">
+			  <h2>Standorte</h2>
+		  	</div>
+            </div>
+            <!-- SINGPOINT LANDKARTE START -->
+            <img class="singpointLandkarteJpeg" src="http://www.singpoint.de/img/Pictures/Singpoint_Landkarte.jpg"
+                 alt="Singpoint Landkarte mit Standorten" style="float:left;" />
+
+            <div id="map" class="singpointLandkarteNeutral" style="width: 307px; height: 350px; position:relative; float:left;">
+                <div class="textlabel" id="karteTextlabelAugsburg">Augsburg</div>
+                <div class="textlabel" id="karteTextlabelBerlin">Berlin</div>
+                <div class="textlabel" id="karteTextlabelHamburg">Hamburg</div>
+                <div class="textlabel" id="karteTextlabelMünchen">München</div>
+                <div class="textlabel" id="karteTextlabelKöln">Köln</div>
+                <div class="textlabel" id="karteTextlabelFrankfurt">Frankfurt</div>
+                <div class="textlabel" id="karteTextlabelStuttgart">Stuttgart</div>
+                <div class="textlabel" id="karteTextlabelDortmund">Dortmund</div>
+                <div class="textlabel" id="karteTextlabelBremen">Bremen</div>
+                <div class="textlabel" id="karteTextlabelBielefeld">Bielefeld</div>
+                <div class="textlabel" id="karteTextlabelBonn">Bonn</div>
+                <div class="textlabel" id="karteTextlabelChemnitz">Chemnitz</div>
+                <div class="textlabel" id="karteTextlabelDarmstadt">Darmstadt</div>
+                <div class="textlabel" id="karteTextlabelDresden">Dresden</div>
+                <div class="textlabel" id="karteTextlabelErfurt">Erfurt</div>
+                <div class="textlabel" id="karteTextlabelFreiburg">Freiburg</div>
+                <div class="textlabel" id="karteTextlabelHannover">Hannover</div>
+                <div class="textlabel" id="karteTextlabelKarlsruhe">Karlsruhe</div>
+                <div class="textlabel" id="karteTextlabelKiel">Kiel</div>
+                <div class="textlabel" id="karteTextlabelKoblenz">Koblenz</div>
+                <div class="textlabel" id="karteTextlabelLeipzig">Leipzig</div>
+                <div class="textlabel" id="karteTextlabelMagdeburg">Magdeburg</div>
+                <div class="textlabel" id="karteTextlabelMannheim">Mannheim</div>
+                <div class="textlabel" id="karteTextlabelMünster">Münster</div>
+                <div class="textlabel" id="karteTextlabelNürnberg">Nürnberg</div>
+                <div class="textlabel" id="karteTextlabelPaderborn">Paderborn</div>
+                <div class="textlabel" id="karteTextlabelRegensburg">Regensburg</div>
+                <div class="textlabel" id="karteTextlabelRostock">Rostock</div>
+                <div class="textlabel" id="karteTextlabelSiegen">Siegen</div>
+                <div class="textlabel" id="karteTextlabelUlm">Ulm</div>
+                <div class="textlabel" id="karteTextlabelWiesbaden">Wiesbaden</div>
+                <div class="textlabel" id="karteTextlabelWuppertal">Wuppertal</div>
+                <div class="textlabel" id="karteTextlabelWürzburg">Würzburg</div>
+
+                <div class="superlabel" id="singpointLandkarteAugsburg">
+                    <div class="info"><span class="headline">Singpoint Augsburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteBerlin">
+                    <div class="info"><span class="headline"><a href="Berlin.html">Singpoint Berlin</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteBielefeld">
+                    <div class="info"><span class="headline">Singpoint Bielefeld</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteBremen">
+                    <div class="info"><span class="headline">Singpoint Bremen</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteChemnitz">
+                    <div class="info"><span class="headline">Singpoint Chemnitz</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteDarmstadt">
+                    <div class="info"><span class="headline">Singpoint Darmstadt</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteDüsseldorf">
+                    <div class="info"><span class="headline"><a href="Duesseldorf.html">Singpoint Düsseldorf</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteDresden">
+                    <div class="info"><span class="headline">Singpoint Dresden</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteDortmund">
+                    <div class="info"><span class="headline"><a href="Dortmund.html">Singpoint Dortmund</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteEssen">
+                    <div class="info"><span class="headline">Singpoint Essen</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteFrankfurt">
+                    <div class="info"><span class="headline"><a href="Frankfurt.html">Singpoint Frankfurt</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteFreiburg">
+                    <div class="info"><span class="headline">Singpoint Freiburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteHamburg">
+                    <div class="info"><span class="headline"><a href="Hamburg.html">Singpoint Hamburg</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteHannover">
+                    <div class="info"><span class="headline">Singpoint Hannover</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteKöln">
+                    <div class="info"><span class="headline"><a href="Koeln.html">Singpoint Köln</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteKoblenz">
+                    <div class="info"><span class="headline">Singpoint Koblenz</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteLeipzig">
+                    <div class="info"><span class="headline">Singpoint Leipzig</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteMünchen">
+                    <div class="info"><span class="headline"><a href="Muenchen.html">Singpoint München</a></span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteMannheim">
+                    <div class="info"><span class="headline">Singpoint Mannheim</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteMagdeburg">
+                    <div class="info"><span class="headline">Singpoint Magdeburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteMünster">
+                    <div class="info"><span class="headline">Singpoint Münster</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteNürnberg">
+                    <div class="info"><span class="headline">Singpoint Nürnberg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteRostock">
+                    <div class="info"><span class="headline">Singpoint Rostock</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteStuttgart">
+                    <div class="info"><span class="headline">Singpoint Stuttgart</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteSiegen">
+                    <div class="info"><span class="headline">Singpoint Siegen</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteUlm">
+                    <div class="info"><span class="headline">Singpoint Ulm</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteWuppertal">
+                    <div class="info"><span class="headline">Singpoint Wuppertal</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteGraz">
+                    <div class="info"><span class="headline">Singpoint Graz</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteBonn">
+                    <div class="info"><span class="headline">Singpoint Bonn</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteWien">
+                    <div class="info"><span class="headline">Singpoint Wien</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteErfurt">
+                    <div class="info"><span class="headline">Singpoint Erfurt</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteMönchengladbach">
+                    <div class="info"><span class="headline">Singpoint Mönchengladbach</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteWürzburg">
+                    <div class="info"><span class="headline">Singpoint Würzburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteKiel">
+                    <div class="info"><span class="headline">Singpoint Kiel</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkartePaderborn">
+                    <div class="info"><span class="headline">Singpoint Paderborn</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteLübeck">
+                    <div class="info"><span class="headline">Singpoint Lübeck</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteAachen">
+                    <div class="info"><span class="headline">Singpoint Aachen</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteKarlsruhe">
+                    <div class="info"><span class="headline">Singpoint Karlsruhe</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteRegensburg">
+                    <div class="info"><span class="headline">Singpoint Regensburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteDuisburg">
+                    <div class="info"><span class="headline">Singpoint Duisburg</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="superlabel" id="singpointLandkarteWiesbaden">
+                    <div class="info"><span class="headline">Singpoint Wiesbaden</span>
+                        <p>
+                            <a href="kindergeburtstag.html">Kindergeburtstag</a>
+                            <a href="junggesellenabschied.html">Junggesellenabschied</a>
+                            <a href="junggesellinnenabschied.html">Junggesellinnenabschied</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- SINGPOINT LANDKARTE ENDE -->
+<table width="31%" border="0" align="right">
+              <tr>
+                <td width="74%"><a href="contact_a.html"><img src="img/Pictures/Singpoint_LandkInt1_1.jpg" alt="LK1" width="224" height="196"></a></td>
+                <td width="26%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><strong>  </strong><br>
+                    <br></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+		    <div id="button_wr2">
+              <div class="text_1_zeile" style="float: left;">
+                <p><strong><br>
+                </strong><strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Aachen<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Augsburg*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Berlin<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Bremen*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Bielefeld<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Bonn*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Chemnitz<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Darmstadt<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Dortmund<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Dresden<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Duisburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Düsseldorf<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Erfurt<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Essen<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Frankfurt (am Main)<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Freiburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Hamburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Hannover<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Karlsruhe<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Kiel<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Koblenz*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Köln<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Leipzig<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Magdeburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Mannheim*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Mönchengladbach<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - München<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Münster<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Nürnberg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Paderborn<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Regensburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Rostock<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Siegen<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Stuttgart<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Ulm*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Wiesbaden<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Wuppertal*<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong>&bull; Singpoint - Würzburg<br>
+                <strong>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  </strong><br>
+                <span class="Stil3"><strong> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong>* Raum</span></p>
+              </div>
+	      </div>
+	    
+	</div>
+</form>
+	
+
+
+
+
+
+
+
+
+
+
+			</div>
+			
+			<div style="clear: both;">
+			  <p>&nbsp;</p>
+		  </div>
+			
+			<div id="footer">
+				<div class="balken"></div>
+				
+				<table class="navi" width="100%" cellpadding="10" cellspacing="0" border="0" style="padding: 0 4px;">
+                  <tr valign="top">
+                    <td width="148"><p>Singpoint</p>
+                        <a href="studios.html">Studios</a><br/>
+                        <a href="vstudio.html">V-Studio</a><br/>
+                        <a href="sing-box.html">Sing-Box</a><br/>
+                        <br/>
+                    </td>
+                    <td width="148"><p>Kontakt</p>
+                        <a href="contact.html">Kontaktdaten</a><br/>
+                    <a href="feedback/index.php">Feedback</a><br/>
+                        <a href="contact.html">Deine Idee</a><br/>
+                        <a href="contact.html">Newsletter</a><br/>
+                    </td>
+                    <td width="148"><p>Unterhaltung</p>
+                        <p><a href="Singpoint_TV.html">Singpoint TV<br>
+                          </a><a href="news_network.html">News &amp; Network<br>
+                          </a><a href="Spiele.html">Spiele</a><br/>
+                          <a href="Vocal_Coaching.html">Vocal-Coaching</a><br/>
+                          <a href="#"></a><br/>
+                      </p></td>
+                    <td width="148"><p>B2B</p>
+                        <a href="Firmenkunden.html">Firmenkunden</a><br/>
+                        <a href="Partnerprogramme.html">Partnerprogramme</a><br/>
+                        <a class="navi" href="Sponsoring.html">Sponsoring</a><br/>
+                        <a href="Presse.html">Presse</a><br/>
+                    </td>
+                    <td width="148"><p>Shopping </p>
+                        <p><a href="playbacks_songtexte.html" target="_blank">Playbacks &amp; Lyrics</a><a href="contact.html"><br>
+                          CD-Nachbestellung<br>
+                          </a><a href="gutschein/index.php">Gutscheine<br>
+                          </a><a href="sing_shop.html">Sing-Shop</a><br/>
+                      </p></td>
+                    <td width="148"><p>Specials</p>
+<a href="http://www.singpoint.de/club/">Club</a><br/>
+                        <a href="Angebot_des_Monats.html">Angebot des Monats</a><br/>
+                        <a href="Special_Events.html">Special-Events</a><br>
+                    </td>
+                    <td width="62"><p>About</p>
+                        <p><a href="UberSingpoint.html">Über SP</a><br/>
+                            <a href="faq.html">FAQ</a><br/>
+                            <a href="Impressum.html">Impressum</a><br>
+                          <a href="Jobs.html">Jobs</a><br/>
+                      </p></td>
+                  </tr>
+                </table>
+                <div style="font-size:11px; margin:10px 0;">
+        <a class="subpage" href="kindergeburtstag.html">Kindergeburtstag feiern</a>
+        <a class="subpage" href="junggesellenabschied.html">Junggesellenabschied feiern</a>
+        <a class="subpage" href="junggesellinnenabschied.html">Junggesellinnenabschied feiern</a>
+        <a class="subpage" href="weihnachtsfeier.html">Weihnachtsfeier</a>
+    </div>
+			  	<div class="foot">
+                	Copyright &copy; Singpoint. All rights reserved.<br>
+					Durch die Nutzung dieser Website akzeptieren Sie unsere Nutzungsbedingungen.
+				</div>
+		  	</div>
+		<script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-1352004-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+	</body>
+	
+</html>
+

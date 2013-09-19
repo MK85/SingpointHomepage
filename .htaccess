@@ -1,0 +1,38 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^singpoint\.de$ [NC]
+RewriteRule ^(.*)$ http://www.singpoint.de/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /index\.html
+RewriteRule ^index\.html/?(.*) /$1? [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^/club/page\.php\?artist= [NC]
+RewriteRule ^/club/(.+) /club/page.php?artist=$1 [NC,R=301,L]
+
+RewriteRule ^news/(.*) /news_network.html [R=301,L]
+
+RewriteRule ^junggesellenabschied/junggesellenabschied_(.*) /junggesellenabschied/junggesellenabschied-$1 [R=301,L]
+
+Redirect permanent /baby-cd.html http://www.singpoint.de/geschenkidee_fuer_eltern_kind_und_baby.html
+Redirect permanent /idee-weihnachtsfeier.html http://www.singpoint.de/weihnachtsfeier.html
+Redirect permanent /idee_weihnachtsfeier.html http://www.singpoint.de/weihnachtsfeier.html
+Redirect permanent /idee-junggesellenabschied.html http://www.singpoint.de/junggesellenabschied.html
+Redirect permanent /idee_junggesellenabschied.html http://www.singpoint.de/junggesellenabschied.html
+Redirect permanent /idee-kindergeburtstag.html http://www.singpoint.de/kindergeburtstag.html
+Redirect permanent /idee_kindergeburtstag.html http://www.singpoint.de/kindergeburtstag.html
+Redirect permanent /sp_lyrics.html http://www.singpoint.de/playbacks_songtexte.html
+Redirect permanent /B2B_info.html http://www.singpoint.de/Firmenkunden.html
+Redirect permanent /Box.html http://www.singpoint.de/sing-box.html
+Redirect permanent /singbox.html http://www.singpoint.de/sing-box.html
+
+Redirect permanent /club/UberSingpoint.html http://www.singpoint.de/UberSingpoint.html
+Redirect permanent /club/contact.html http://www.singpoint.de/contact.html
+Redirect permanent /gutschein/contact.html http://www.singpoint.de/contact.html
+Redirect permanent /onlinebooking/contact.html http://www.singpoint.de/contact.html
+Redirect permanent /junggesellenabschied/contact.html http://www.singpoint.de/contact.html
+Redirect permanent /junggesellenabschied/index.html http://www.singpoint.de/index.html
+Redirect permanent /junggesellenabschied/studios.html http://www.singpoint.de/studios.html
+
+AddType x-mapp-php5 .php
+AddHandler x-mapp-php5 .php
