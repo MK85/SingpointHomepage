@@ -34,5 +34,5 @@ Redirect permanent /junggesellenabschied/contact.html http://www.singpoint.de/co
 Redirect permanent /junggesellenabschied/index.html http://www.singpoint.de/index.html
 Redirect permanent /junggesellenabschied/studios.html http://www.singpoint.de/studios.html
 
-AddType x-mapp-php5 .php
-AddHandler x-mapp-php5 .php
+AddType x-mapp-php5 .php .html
+AddHandler x-mapp-php5 .php .html
